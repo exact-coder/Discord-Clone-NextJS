@@ -1,22 +1,25 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Open_Sans } from 'next/font/google'
+import type { Metadata } from "next";
+import { Open_Sans } from "next/font/google";
+import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
-const font = Open_Sans({ subsets: ['latin'] })
+const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Discord || Team chat Application',
-  description: 'This is a the description of Discord',
-}
+  title: "Discord || Team chat Application",
+  description: "This is a the description of Discord",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={font.className}>{children}</body>
-    </html>
-  )
+    <ClerkProvider>
+      <html lang="en">
+        <body className={font.className}>{children}</body>
+      </html>
+    </ClerkProvider>
+  );
 }
