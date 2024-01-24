@@ -23,5 +23,5 @@ const SetupPage = async () => {
 
 export default SetupPage;
 
-// len 2.57min
+// len 3.02min
 
