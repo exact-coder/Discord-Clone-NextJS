@@ -8,7 +8,7 @@ const SetupPage = async () => {
     const profile = await initialProfile();
     const server = await db.server.findFirst({
         where: {
-            members:{
+            members: {
                 some: {
                     profileId: profile.id
                 }
@@ -23,5 +23,5 @@ const SetupPage = async () => {
 
 export default SetupPage;
 
-// len 5.00min
+// len 5.19min
 
