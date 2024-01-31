@@ -45,7 +45,7 @@ const ServerSearch = ({data}: ServerSearchProps) => {
         }
     }
 
-  return (
+   return (
     <>
         <button onClick={() => setOpen(true)} className="group px-2 py-2 rounded-md flex items-center gap-x-2 w-full hover:bg-zinc-700/10 dark:hover:bg-zinc-700/50 transition">
             <Search className='w-4 h-4 text-zinc-500 dark:text-zinc-400'/>
