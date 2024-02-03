@@ -27,7 +27,23 @@ export const SocketProvider = ({children}: { children: React.ReactNode}) => {
         addTrailingSlash: false,
       });
 
-      
+      socketInstance.on("connect", () => {
+        setIsConnected(true);
+      });
+
+      socketInstance.on("disconnect", () => {
+        setIsConnected(false);
+      });
+
+      return () => {
+        socketInstance.disconnect();
+      }
     }, []);
+
+    return (
+        <SocketContext.Provider value={{ socket, isConnected }}>
+            {children}
+        </SocketContext.Provider>
+    )
 }
 
