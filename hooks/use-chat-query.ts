@@ -40,7 +40,7 @@ export const useChatQuery = ({
   } = useInfiniteQuery({
     queryKey: [queryKey],
     queryFn: fetchMessages,
-    initialPageParam: 1,
+    // initialPageParam: 1,
     getNextPageParam: (lastPage) =>
       lastPage?.nextCursor,
     refetchInterval: isConnected ? false : 1000,
